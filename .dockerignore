@@ -1,0 +1,15 @@
+.dart_tool
+.packages
+build
+.android
+.ios
+.flutter-plugins
+.flutter-plugins-dependencies
+**/.git
+**/.idea
+**/.vscode
+**/.fvm
+**/node_modules
+**/.DS_Store
+**/.gradle
+**/tools/mock-server/node_modules

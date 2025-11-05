@@ -1,0 +1,34 @@
+{
+  "members": [
+    {
+      "id": "m001",
+      "firstName": "Emma",
+      "lastName": "Test",
+      "birthYear": 2010,
+      "relationship": "Daughter",
+      "avatar": "https://i.pravatar.cc/150?img=1",
+      "status": "active",
+      "screenTimeEnabled": true
+    },
+    {
+      "id": "m002",
+      "firstName": "Liam",
+      "lastName": "Test",
+      "birthYear": 2012,
+      "relationship": "Son",
+      "avatar": "https://i.pravatar.cc/150?img=2",
+      "status": "active",
+      "screenTimeEnabled": false
+    },
+    {
+      "id": "m003",
+      "firstName": "Olivia",
+      "lastName": "Test",
+      "birthYear": 2008,
+      "relationship": "Daughter",
+      "avatar": "https://i.pravatar.cc/150?img=3",
+      "status": "inactive",
+      "screenTimeEnabled": true
+    }
+  ]
+}
