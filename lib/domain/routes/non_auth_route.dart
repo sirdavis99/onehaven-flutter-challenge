@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ride_hailing/domain/routes/route_generator.dart';
+import 'package:ride_hailing/theme/app_theme.dart';
 
 
 class NonAuthRoute extends StatelessWidget {
@@ -21,9 +22,10 @@ class NonAuthRoute extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return const MaterialApp(
-          title: "Ride Hailing",
+        return MaterialApp(
+          title: "OneHaven",
           debugShowCheckedModeBanner: false,
+          theme: AppTheme.light(),
           onGenerateRoute: RouteGenerator.nonAuthRoute,
           initialRoute: RouteGenerator.loginPage,
         );

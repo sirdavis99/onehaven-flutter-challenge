@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Welcome Back',
+                    'True Digital Protection',
                     style: largeTextRubik().copyWith(
                       fontWeight: FontWeight.w500,
                       color: boldTextColor,
@@ -57,7 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    'Enter your details below',
+                    'Protect everyone you love from scams and online threats',
                     style: mediumTextRubik().copyWith(
                       fontWeight: FontWeight.w300,
                       color: lightTextColor,
