@@ -9,7 +9,7 @@ import 'package:ride_hailing/utils/image_const.dart';
 import 'package:ride_hailing/utils/theme.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_hailing/services/auth_service.dart';
-import 'package:ride_hailing/stores/auth/model.dart';
+import 'package:ride_hailing/domain/auth/auth_model.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

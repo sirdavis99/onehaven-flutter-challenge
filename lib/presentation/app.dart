@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:ride_hailing/domain/routes/route_selector.dart';
-import 'package:ride_hailing/services/services.dart';
+import 'package:ride_hailing/services/auth_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ride_hailing/logic/provider/member_store.dart';
 
@@ -20,10 +20,6 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthService(prefs)),
-        ProxyProvider<AuthService, HttpService>(
-          update: (_, authService, __) => HttpService(authService),
-        ),
-        ChangeNotifierProvider(create: (_) => UserService()),
         ChangeNotifierProvider(create: (_) => MemberStore()),
       ],
       child: const RouteSelector(),

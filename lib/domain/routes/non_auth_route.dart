@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ride_hailing/domain/routes/route_generator.dart';
 
@@ -17,20 +16,18 @@ class NonAuthRoute extends StatelessWidget {
         statusBarColor: Colors.transparent,
       ),
     );
-    return ProviderScope(
-      child: ScreenUtilInit(
-        designSize: const Size(430, 932),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) {
-          return  const MaterialApp(
-            title: "Ride Hailing",
-            debugShowCheckedModeBanner: false,
-            onGenerateRoute: RouteGenerator.nonAuthRoute,
-            initialRoute: RouteGenerator.loginPage,
-          );
-        },
-      ),
+    return ScreenUtilInit(
+      designSize: const Size(430, 932),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return const MaterialApp(
+          title: "Ride Hailing",
+          debugShowCheckedModeBanner: false,
+          onGenerateRoute: RouteGenerator.nonAuthRoute,
+          initialRoute: RouteGenerator.loginPage,
+        );
+      },
     );
   }
 }

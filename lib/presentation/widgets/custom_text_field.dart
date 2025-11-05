@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_places_flutter/google_places_flutter.dart';
-import 'package:google_places_flutter/model/prediction.dart';
 import 'package:ride_hailing/utils/color_const.dart';
 import 'package:ride_hailing/utils/theme.dart';
-
-import '../../domain/entities/vehicle.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -181,71 +176,9 @@ class BorderlessCustomTextField extends StatelessWidget {
   }
 }
 
-class CustomGooglePlaceTextField extends StatelessWidget {
-  final String label;
-  final TextEditingController controller;
-  final void Function(Prediction)? itemClick;
-  const CustomGooglePlaceTextField(
-      {super.key,
-      required this.label,
-      required this.controller,
-      this.itemClick});
+ 
 
-  @override
-  Widget build(BuildContext context) {
-    return GooglePlaceAutoCompleteTextField(
-      textEditingController: controller,
-      googleAPIKey: dotenv.env['GOOGLE_API_KEY']!,
-      inputDecoration: InputDecoration(
-        //counter: const Offstage(),
-        label: Text(
-          label,
-          style: normalTextRubik().copyWith(color: lightTextColor),
-        ),
-
-        enabledBorder: InputBorder.none,
-        errorBorder: InputBorder.none,
-        focusedBorder: InputBorder.none,
-        disabledBorder: InputBorder.none,
-        border: InputBorder.none,
-      ),
-      boxDecoration: BoxDecoration(
-          color: Colors.transparent,
-          border: Border.all(
-            color: Colors.transparent,
-          )),
-      debounceTime: 800, // default 600 ms,
-
-      isLatLngRequired: true, // if you required coordinates from place detail
-      getPlaceDetailWithLatLng: (Prediction prediction) {
-        // this method will return latlng with place detail
-        debugPrint("placeDetails${prediction.lng}");
-      }, // this callback is called when isLatLngRequired is true
-      itemClick: itemClick,
-      // if we want to make custom list item builder
-      itemBuilder: (context, index, Prediction prediction) {
-        return Container(
-          padding: const EdgeInsets.all(10),
-          child: Row(
-            children: [
-              const Icon(Icons.location_on),
-              7.0.horizontalSpace,
-              Expanded(
-                child: Text(prediction.description ?? ""),
-              ),
-            ],
-          ),
-        );
-      },
-      // if you want to add seperator between list items
-      seperatedBuilder: const Divider(),
-      // want to show close icon
-      isCrossBtnShown: true,
-    );
-  }
-}
-
-class CustomDropdownWidget extends StatelessWidget {
+class CustomDropdownWidget<T> extends StatelessWidget {
   const CustomDropdownWidget(
       {super.key,
       this.width,
@@ -256,9 +189,9 @@ class CustomDropdownWidget extends StatelessWidget {
       this.hintText});
 
   final double? width;
-  final List<VehiclesData> list;
-  final VehiclesData? selectedValue;
-  final void Function(VehiclesData?) onChanged;
+  final List<T> list;
+  final T? selectedValue;
+  final void Function(T?) onChanged;
   final Widget? child;
   final String? hintText;
 
@@ -274,7 +207,7 @@ class CustomDropdownWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 12.0.w),
         child: DropdownButtonHideUnderline(
-          child: DropdownButtonFormField<VehiclesData>(
+          child: DropdownButtonFormField<T>(
             decoration: const InputDecoration(
               border: InputBorder.none,
             ),
@@ -289,11 +222,11 @@ class CustomDropdownWidget extends StatelessWidget {
             ),
             items: list
                 .map(
-                  (VehiclesData value) => DropdownMenuItem(
+                  (T value) => DropdownMenuItem(
                     value: value,
                     child: child ??
                         Text(
-                          value.carType!,
+                          value.toString(),
                           style: normalTextRubik(),
                         ),
                   ),

@@ -4,8 +4,6 @@
         android:label="ride_hailing"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAn-TPOa5piGNI-zTTrp7jy88zHoQw3II4" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
