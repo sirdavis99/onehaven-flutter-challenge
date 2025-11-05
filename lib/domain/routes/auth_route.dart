@@ -27,7 +27,7 @@ class AuthRoute extends StatelessWidget {
             title: "Ride Hailing",
             debugShowCheckedModeBanner: false,
             onGenerateRoute: RouteGenerator.authRoute,
-            initialRoute: RouteGenerator.bottomBarPage,
+            initialRoute: RouteGenerator.dashboardPage,
             // theme:  ThemeData(
             //   textTheme: GoogleFonts.rubikTextTheme(
             //     Theme.of(context).textTheme,

@@ -27,7 +27,7 @@ class NonAuthRoute extends StatelessWidget {
             title: "Ride Hailing",
             debugShowCheckedModeBanner: false,
             onGenerateRoute: RouteGenerator.nonAuthRoute,
-            initialRoute: RouteGenerator.onboardingPage,
+            initialRoute: RouteGenerator.loginPage,
           );
         },
       ),

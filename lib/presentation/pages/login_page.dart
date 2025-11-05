@@ -7,9 +7,28 @@ import 'package:ride_hailing/presentation/widgets/custom_text_field.dart';
 import 'package:ride_hailing/utils/color_const.dart';
 import 'package:ride_hailing/utils/image_const.dart';
 import 'package:ride_hailing/utils/theme.dart';
+import 'package:provider/provider.dart';
+import 'package:ride_hailing/services/auth_service.dart';
+import 'package:ride_hailing/stores/auth/model.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,21 +80,23 @@ class LoginPage extends StatelessWidget {
                       ),
                       child: Padding(
                         padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            SizedBox(
-                              height: 50.0.h,
-                            ),
-                            Text(
-                              "Welcome Back",
-                              textAlign: TextAlign.center,
-                              style: largeTextRubik().copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: boldTextColor,
+                        child: Form(
+                          key: _formKey,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 50.0.h,
                               ),
-                            ),
+                              Text(
+                                "Welcome Back",
+                                textAlign: TextAlign.center,
+                                style: largeTextRubik().copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  color: boldTextColor,
+                                ),
+                              ),
                                 SizedBox(
                                   height: 10.0.h,
                                 ),
@@ -90,11 +111,31 @@ class LoginPage extends StatelessWidget {
                                 SizedBox(
                                   height: 24.0.h,
                                 ),
-                                const CustomTextField(label: "Email Address"),
+                                CustomTextField(
+                                  label: "Email Address",
+                                  controller: _emailController,
+                                  textInputType: TextInputType.emailAddress,
+                                  validator: (v) {
+                                    if (v == null || v.isEmpty) return "Email is required";
+                                    final re = RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$');
+                                    if (!re.hasMatch(v)) return "Enter a valid email";
+                                    return null;
+                                  },
+                                ),
                                 SizedBox(
                                   height: 25.0.h,
                                 ),
-                                CustomTextField(label: "Password", suffixIcon: SvgPicture.asset(hidePassword, fit: BoxFit.scaleDown,),),
+                                CustomTextField(
+                                  label: "Password",
+                                  controller: _passwordController,
+                                  obscureText: true,
+                                  validator: (v) {
+                                    if (v == null || v.isEmpty) return "Password is required";
+                                    if (v.length < 6) return "Min 6 characters";
+                                    return null;
+                                  },
+                                  suffixIcon: SvgPicture.asset(hidePassword, fit: BoxFit.scaleDown,),
+                                ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,7 +150,18 @@ class LoginPage extends StatelessWidget {
                                 // SizedBox(
                                 //   height: 20.0.h,
                                 // ),
-                                CustomButton(size: size, onTap: (){}, text: "Log in"),
+                                CustomButton(
+                                  size: size,
+                                  onTap: () {
+                                    final form = _formKey.currentState;
+                                    if (form != null && form.validate()) {
+                                      context.read<AuthService>().setAuth(
+                                            AuthModel(token: 'mock-token'),
+                                          );
+                                    }
+                                  },
+                                  text: "Log in",
+                                ),
                                 SizedBox(
                                   height: 10.0.h,
                                 ),

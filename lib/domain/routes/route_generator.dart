@@ -11,6 +11,9 @@ import 'package:ride_hailing/presentation/pages/onboarding.dart';
 import 'package:ride_hailing/presentation/pages/post_trip.dart';
 import 'package:ride_hailing/presentation/pages/success_screen.dart';
 import 'package:ride_hailing/presentation/pages/support_chat_page.dart';
+import 'package:ride_hailing/presentation/pages/dashboard_page.dart';
+import 'package:ride_hailing/presentation/pages/member_detail_page.dart';
+import 'package:ride_hailing/domain/members/member.dart';
 
 import '../../presentation/pages/bottom_bar.dart';
 import '../../presentation/pages/driver_kyc_page.dart';
@@ -21,6 +24,8 @@ class RouteGenerator {
   static const joinPage = "/joinPage";
   static const loginPage = "/loginPage";
   static const bottomBarPage = "/bottomBarPage";
+  static const dashboardPage = "/dashboard";
+  static const memberDetailPage = "/memberDetail";
   static const editPage = "/editPage";
   static const securitySettingPage = "/securitySettingPage";
   static const postTripPage = "/postTripPage";
@@ -51,6 +56,13 @@ class RouteGenerator {
 
   static Route<dynamic> authRoute(RouteSettings settings) {
     switch (settings.name) {
+      case dashboardPage:
+        return MaterialPageRoute(builder: (_) => const DashboardPage());
+      case memberDetailPage:
+        return MaterialPageRoute(
+            builder: (_) => MemberDetailPage(
+                  member: settings.arguments as Member,
+                ));
       case bottomBarPage:
         return MaterialPageRoute(builder: (_) => const BottomAppBarPage());
       case editPage:

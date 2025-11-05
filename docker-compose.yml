@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  flutter:
+  onehaven-app:
     build: .
     volumes:
       - ./:/app
@@ -9,9 +9,9 @@ services:
       - ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
     tty: true
     stdin_open: true
-  mock:
-    image: typicode/json-server:latest
-    command: ["--watch", "/data/db.json", "--port", "3000"]
+  mock-api:
+    image: node:18-alpine
+    command: ["sh", "-lc", "npx -y json-server@0.17.4 --watch /data/db.json --host 0.0.0.0 --port 3000"]
     volumes:
       - ./tools/mock-server/db.json:/data/db.json:ro
     ports:
