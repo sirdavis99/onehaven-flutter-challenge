@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'package:ride_hailing/presentation/widgets/custom_btn.dart';
 import 'package:ride_hailing/presentation/widgets/custom_text_field.dart';
-import 'package:ride_hailing/utils/color_const.dart';
-import 'package:ride_hailing/utils/theme.dart';
-import 'package:provider/provider.dart';
 import 'package:ride_hailing/services/auth_service.dart';
 import 'package:ride_hailing/domain/auth/auth_model.dart';
-import 'package:ride_hailing/domain/routes/route_generator.dart';
+import 'package:ride_hailing/utils/color_const.dart';
+import 'package:ride_hailing/utils/theme.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
+  final _firstNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
 
   @override
   void dispose() {
+    _firstNameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -39,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: Scaffold(
         backgroundColor: whiteColor,
-        appBar: AppBar(title: const Text('Login')),
+        appBar: AppBar(title: const Text('Register')),
         body: SafeArea(
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(20),
@@ -49,21 +52,19 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Welcome Back',
+                    'Create your account',
                     style: largeTextRubik().copyWith(
                       fontWeight: FontWeight.w500,
                       color: boldTextColor,
                     ),
                   ),
-                  const SizedBox(height: 12),
-                  Text(
-                    'Enter your details below',
-                    style: mediumTextRubik().copyWith(
-                      fontWeight: FontWeight.w300,
-                      color: lightTextColor,
-                    ),
-                  ),
                   const SizedBox(height: 24),
+                  CustomTextField(
+                    label: 'First Name (optional)',
+                    controller: _firstNameController,
+                    textInputType: TextInputType.name,
+                  ),
+                  const SizedBox(height: 16),
                   CustomTextField(
                     label: 'Email Address',
                     controller: _emailController,
@@ -86,6 +87,17 @@ class _LoginPageState extends State<LoginPage> {
                       return null;
                     },
                   ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    label: 'Confirm Password',
+                    controller: _confirmPasswordController,
+                    obscureText: true,
+                    validator: (v) {
+                      if (v == null || v.isEmpty) return 'Confirm your password';
+                      if (v != _passwordController.text) return 'Passwords do not match';
+                      return null;
+                    },
+                  ),
                   const SizedBox(height: 24),
                   CustomButton(
                     size: size,
@@ -97,20 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                             );
                       }
                     },
-                    text: 'Log in',
-                  ),
-                  const SizedBox(height: 12),
-                  Align(
-                    alignment: Alignment.center,
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed(RouteGenerator.registerPage);
-                      },
-                      child: Text(
-                        "Don't have an account? Sign up",
-                        style: normalTextRubik().copyWith(color: lightTextColor),
-                      ),
-                    ),
+                    text: 'Create account',
                   ),
                 ],
               ),
@@ -121,4 +120,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-

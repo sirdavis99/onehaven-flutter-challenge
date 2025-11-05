@@ -3,9 +3,11 @@ import 'package:ride_hailing/presentation/pages/login_page.dart';
 import 'package:ride_hailing/presentation/pages/dashboard_page.dart';
 import 'package:ride_hailing/presentation/pages/member_detail_page.dart';
 import 'package:ride_hailing/domain/members/member.dart';
+import 'package:ride_hailing/presentation/pages/register_page.dart';
 
 class RouteGenerator {
   static const loginPage = "/loginPage";
+  static const registerPage = "/registerPage";
   static const dashboardPage = "/dashboard";
   static const memberDetailPage = "/memberDetail";
 
@@ -13,6 +15,8 @@ class RouteGenerator {
     switch (settings.name) {
       case loginPage:
         return MaterialPageRoute(builder: (_) => const LoginPage());
+      case registerPage:
+        return MaterialPageRoute(builder: (_) => const RegisterPage());
       default:
         return MaterialPageRoute(builder: (_) => const LoginPage());
     }

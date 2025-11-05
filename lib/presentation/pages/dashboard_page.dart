@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:ride_hailing/logic/provider/member_store.dart';
 import 'package:ride_hailing/domain/members/member.dart';
 import 'package:ride_hailing/domain/routes/route_generator.dart';
+import 'package:ride_hailing/services/auth_service.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -82,6 +83,11 @@ class _DashboardPageState extends State<DashboardPage> {
           if (store.syncing) const Padding(
             padding: EdgeInsets.only(right: 16.0),
             child: Center(child: SizedBox(height: 16, width: 16, child: CircularProgressIndicator(strokeWidth: 2))),
+          ),
+          IconButton(
+            tooltip: 'Logout',
+            icon: const Icon(Icons.logout),
+            onPressed: () => context.read<AuthService>().clearAuth(),
           ),
         ],
       ),
