@@ -1,4 +1,4 @@
-package com.example.ride_hailing
+package io.onehaven.challenge
 
 import io.flutter.embedding.android.FlutterActivity
 
