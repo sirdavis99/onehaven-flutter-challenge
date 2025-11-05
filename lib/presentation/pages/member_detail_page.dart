@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/domain/members/member.dart';
+import 'package:onehaven_flutter_challenge/domain/members/member.dart';
 
 class MemberDetailPage extends StatelessWidget {
   final Member member;

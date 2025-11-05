@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:ride_hailing/domain/members/member.dart';
+import 'package:onehaven_flutter_challenge/domain/members/member.dart';
 
 class MemberService {
   final Dio _dio;

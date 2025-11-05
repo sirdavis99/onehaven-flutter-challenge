@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/domain/auth/auth_model.dart';
+import 'package:onehaven_flutter_challenge/domain/auth/auth_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService with ChangeNotifier {

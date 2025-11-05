@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/fetch_selected_rides.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/fetch_selected_rides.dart';
 part 'get_selected_vehicles.freezed.dart';
 
 extension GetSelectedRideStateGetters on GetSelectedRideState {

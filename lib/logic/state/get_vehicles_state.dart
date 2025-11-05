@@ -2,7 +2,7 @@
 
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/get_vehicles.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/get_vehicles.dart';
 
 part 'get_vehicles_state.freezed.dart';
 

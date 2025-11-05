@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/domain/routes/auth_route.dart';
-import 'package:ride_hailing/domain/routes/non_auth_route.dart';
+import 'package:onehaven_flutter_challenge/domain/routes/auth_route.dart';
+import 'package:onehaven_flutter_challenge/domain/routes/non_auth_route.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_hailing/services/auth_service.dart';
+import 'package:onehaven_flutter_challenge/services/auth_service.dart';
 
 class RouteSelector extends StatelessWidget {
   const RouteSelector({super.key});

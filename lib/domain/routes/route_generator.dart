@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/presentation/pages/login_page.dart';
-import 'package:ride_hailing/presentation/pages/dashboard_page.dart';
-import 'package:ride_hailing/presentation/pages/member_detail_page.dart';
-import 'package:ride_hailing/domain/members/member.dart';
-import 'package:ride_hailing/presentation/pages/register_page.dart';
+import 'package:onehaven_flutter_challenge/presentation/pages/login_page.dart';
+import 'package:onehaven_flutter_challenge/presentation/pages/dashboard_page.dart';
+import 'package:onehaven_flutter_challenge/presentation/pages/member_detail_page.dart';
+import 'package:onehaven_flutter_challenge/domain/members/member.dart';
+import 'package:onehaven_flutter_challenge/presentation/pages/register_page.dart';
 
 class RouteGenerator {
   static const loginPage = "/loginPage";

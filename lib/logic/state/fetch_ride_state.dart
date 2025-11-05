@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/ride.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/ride.dart';
 part 'fetch_ride_state.freezed.dart';
 
 extension FetchRideStateGetters on FetchRideState {

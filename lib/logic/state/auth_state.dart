@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/auth.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/auth.dart';
 part 'auth_state.freezed.dart';
 
 

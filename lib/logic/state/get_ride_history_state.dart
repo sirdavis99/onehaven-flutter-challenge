@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/ride_history.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/ride_history.dart';
 part 'get_ride_history_state.freezed.dart';
 
 extension GetRideHistoryStateGetters on GetRideHistoryState {

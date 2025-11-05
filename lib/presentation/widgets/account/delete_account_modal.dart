@@ -1,14 +1,14 @@
 import 'package:hive/hive.dart';
-import 'package:ride_hailing/domain/entities/hive/auth_state.dart';
-import 'package:ride_hailing/domain/entities/hive/user.dart';
-import 'package:ride_hailing/domain/routes/route_generator.dart';
-import 'package:ride_hailing/gen/fonts.gen.dart';
-import 'package:ride_hailing/presentation/widgets/ui/ui.dart';
-import 'package:ride_hailing/services/services.dart';
-import 'package:ride_hailing/utils/colors.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/hive/auth_state.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/hive/user.dart';
+import 'package:onehaven_flutter_challenge/domain/routes/route_generator.dart';
+import 'package:onehaven_flutter_challenge/gen/fonts.gen.dart';
+import 'package:onehaven_flutter_challenge/presentation/widgets/ui/ui.dart';
+import 'package:onehaven_flutter_challenge/services/services.dart';
+import 'package:onehaven_flutter_challenge/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_hailing/utils/hive_const.dart';
+import 'package:onehaven_flutter_challenge/utils/hive_const.dart';
 
 class DeleteAccountModal extends StatefulWidget {
   final Function()? onSuccess;

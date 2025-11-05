@@ -1,8 +1,8 @@
-import 'package:ride_hailing/gen/fonts.gen.dart';
+import 'package:onehaven_flutter_challenge/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/presentation/widgets/ui/x_margin.dart';
-import 'package:ride_hailing/utils/colors.dart';
-import 'package:ride_hailing/utils/screen.dart';
+import 'package:onehaven_flutter_challenge/presentation/widgets/ui/x_margin.dart';
+import 'package:onehaven_flutter_challenge/utils/colors.dart';
+import 'package:onehaven_flutter_challenge/utils/screen.dart';
 
 enum ThemeButtonIconPosition {
   prefix,

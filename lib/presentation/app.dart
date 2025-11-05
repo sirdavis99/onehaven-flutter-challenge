@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_hailing/domain/routes/route_selector.dart';
-import 'package:ride_hailing/services/auth_service.dart';
+import 'package:onehaven_flutter_challenge/domain/routes/route_selector.dart';
+import 'package:onehaven_flutter_challenge/services/auth_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ride_hailing/logic/provider/member_store.dart';
+import 'package:onehaven_flutter_challenge/logic/provider/member_store.dart';
 
 class App extends StatelessWidget {
   final SharedPreferences prefs;

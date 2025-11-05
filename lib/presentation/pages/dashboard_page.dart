@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_hailing/logic/provider/member_store.dart';
-import 'package:ride_hailing/domain/members/member.dart';
-import 'package:ride_hailing/domain/routes/route_generator.dart';
-import 'package:ride_hailing/services/auth_service.dart';
+import 'package:onehaven_flutter_challenge/logic/provider/member_store.dart';
+import 'package:onehaven_flutter_challenge/domain/members/member.dart';
+import 'package:onehaven_flutter_challenge/domain/routes/route_generator.dart';
+import 'package:onehaven_flutter_challenge/services/auth_service.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});

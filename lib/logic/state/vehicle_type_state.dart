@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/vehicle_type.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/vehicle_type.dart';
 
 part 'vehicle_type_state.freezed.dart';
 

@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart' as path;
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/presentation/app.dart';
+import 'package:onehaven_flutter_challenge/presentation/app.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

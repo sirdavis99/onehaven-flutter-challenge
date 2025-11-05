@@ -1,4 +1,4 @@
-import 'package:ride_hailing/gen/fonts.gen.dart';
+import 'package:onehaven_flutter_challenge/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
 class ThemeText extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ride_hailing/domain/routes/route_generator.dart';
-import 'package:ride_hailing/theme/app_theme.dart';
+import 'package:onehaven_flutter_challenge/domain/routes/route_generator.dart';
+import 'package:onehaven_flutter_challenge/theme/app_theme.dart';
 
 class AuthRoute extends StatelessWidget {
   const AuthRoute({super.key});

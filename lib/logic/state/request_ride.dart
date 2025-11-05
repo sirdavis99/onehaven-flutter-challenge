@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/request_ride.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/request_ride.dart';
 
 part 'request_ride.freezed.dart';
 

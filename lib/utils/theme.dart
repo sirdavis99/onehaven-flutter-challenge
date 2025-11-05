@@ -3,7 +3,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:ride_hailing/utils/color_const.dart';
+import 'package:onehaven_flutter_challenge/utils/color_const.dart';
 
 
 TextStyle nairaNormalText() {

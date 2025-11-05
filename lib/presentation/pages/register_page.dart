@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:ride_hailing/presentation/widgets/custom_btn.dart';
-import 'package:ride_hailing/presentation/widgets/custom_text_field.dart';
-import 'package:ride_hailing/services/auth_service.dart';
-import 'package:ride_hailing/domain/auth/auth_model.dart';
-import 'package:ride_hailing/utils/color_const.dart';
-import 'package:ride_hailing/utils/theme.dart';
+import 'package:onehaven_flutter_challenge/presentation/widgets/custom_btn.dart';
+import 'package:onehaven_flutter_challenge/presentation/widgets/custom_text_field.dart';
+import 'package:onehaven_flutter_challenge/services/auth_service.dart';
+import 'package:onehaven_flutter_challenge/domain/auth/auth_model.dart';
+import 'package:onehaven_flutter_challenge/utils/color_const.dart';
+import 'package:onehaven_flutter_challenge/utils/theme.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
-import 'package:ride_hailing/domain/members/member.dart';
-import 'package:ride_hailing/services/member_service.dart';
+import 'package:onehaven_flutter_challenge/domain/members/member.dart';
+import 'package:onehaven_flutter_challenge/services/member_service.dart';
 
 class MemberStore with ChangeNotifier {
   final MemberService _service;

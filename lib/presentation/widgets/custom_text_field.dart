@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ride_hailing/utils/color_const.dart';
-import 'package:ride_hailing/utils/theme.dart';
+import 'package:onehaven_flutter_challenge/utils/color_const.dart';
+import 'package:onehaven_flutter_challenge/utils/theme.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({

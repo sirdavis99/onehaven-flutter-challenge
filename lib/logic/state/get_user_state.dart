@@ -2,7 +2,7 @@
 
 
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:ride_hailing/domain/entities/user.dart';
+import 'package:onehaven_flutter_challenge/domain/entities/user.dart';
 part 'get_user_state.freezed.dart';
 
 extension GetUserStateGetters on GetUserState {
