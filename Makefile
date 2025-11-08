@@ -2,9 +2,11 @@
 # Default Android emulator device id example: emulator-5554
 DEVICE ?= emulator-5554
 
-# One-time tooling build
+# One-time tooling build (ensure SDK/Gradle dirs and prime Android SDK)
 build:
+	mkdir -p android-sdk gradle-cache
 	docker compose build
+	docker compose run --rm onehaven-app bash -lc 'yes | sdkmanager --licenses && sdkmanager "platform-tools" "cmdline-tools;latest" "platforms;android-35" "build-tools;35.0.0"'
 
 # Enter dev shell
 shell:
