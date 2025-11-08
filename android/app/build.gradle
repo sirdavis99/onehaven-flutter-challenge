@@ -38,7 +38,6 @@ android {
 
     // compileSdkVersion flutter.compileSdkVersion
     // ndkVersion flutter.ndkVersion
-    ndkVersion = "27.0.12077973"
     compileSdk = 35
 
     

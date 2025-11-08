@@ -1,12 +1,15 @@
-version: "3.9"
 services:
   onehaven-app:
     build: .
     volumes:
       - ./:/app
       - flutter_pub_cache:/root/.pub-cache
+      - android_sdk:/opt/android-sdk-linux
+      - gradle_cache:/root/.gradle
     environment:
       - ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
+      - ANDROID_SDK_ROOT=/opt/android-sdk-linux
+      - ANDROID_HOME=/opt/android-sdk-linux
     tty: true
     stdin_open: true
   mock-api:
@@ -18,3 +21,5 @@ services:
       - "3000:3000"
 volumes:
   flutter_pub_cache:
+  android_sdk:
+  gradle_cache:

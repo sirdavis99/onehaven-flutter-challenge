@@ -1,8 +1,8 @@
 FROM ghcr.io/cirruslabs/flutter:stable
 
 ENV PUB_CACHE=/root/.pub-cache \
-    ANDROID_SDK_ROOT=/opt/android-sdk \
-    ANDROID_HOME=/opt/android-sdk \
+    ANDROID_SDK_ROOT=/opt/android-sdk-linux \
+    ANDROID_HOME=/opt/android-sdk-linux \
     ADB_SERVER_SOCKET=tcp:host.docker.internal:5037
 
 WORKDIR /app
